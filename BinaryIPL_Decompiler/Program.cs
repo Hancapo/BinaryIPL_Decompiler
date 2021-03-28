@@ -20,10 +20,13 @@ namespace BinaryIPL_Decompiler
 
             int ItemCount;
             int CarCount;
-            string[] idefiles = Directory.GetFiles("ide/", "*.ide");
-            string[] binaryiplfiles = Directory.GetFiles("bipl/", "*.ipl");
+            Console.WriteLine("IDE files folder");
+            string[] idefiles = Directory.GetFiles(Console.ReadLine() + "/", "*.ide");
+            Console.WriteLine("Binary IPLs folder");
+            string[] binaryiplfiles = Directory.GetFiles(Console.ReadLine() + "/", "*.ipl");
+            Console.WriteLine("Decompiled Binary IPLs folder");
+            string decompipl = Console.ReadLine() + "/";
             StringBuilder sb = new StringBuilder();
-            Directory.CreateDirectory("ipl");
 
             foreach (var ide in idefiles)
             {
@@ -139,7 +142,7 @@ namespace BinaryIPL_Decompiler
                     Console.WriteLine("Writing " + Path.GetFileName(ipl) + " decompiled IPL");
                     
 
-                    File.WriteAllText("ipl/" + Path.GetFileName(ipl), sb.ToString().Replace("NaN", "0"));
+                    File.WriteAllText(decompipl + Path.GetFileName(ipl), sb.ToString().Replace("NaN", "0"));
                     sb.Clear();
 
                 }
