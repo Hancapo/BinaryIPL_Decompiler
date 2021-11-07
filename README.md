@@ -4,7 +4,7 @@ BID is a GTA SA IPL decompiler that outputs a human-readable ipl.
 
 ## Installation
 
-Download the latest release and compile it using Visual Studio 2019, it requires .NET Core 3.1 runtime.
+Download the latest release and compile it using Visual Studio 2019, it requires .NET Core 5 runtime.
 
 ## Usage
 
